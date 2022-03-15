@@ -1,5 +1,3 @@
-"use strict";
-
 const createNewMatrix = (matrix3d, size) => {
     const startIndex = matrix3d.length;
 

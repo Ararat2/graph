@@ -1,5 +1,3 @@
-"use strict";
-
 const main = () => {
 
     const matrix3d = [];
@@ -14,6 +12,24 @@ const main = () => {
         matrix3d.push(multipleTwoMatrixes(matrix3d[matrix3d.length - 1], matrix3d[0]));
     }
 
-    console.log("THE PROGRAM HAS BEEN FINISHED: ", matrix3d);
+    const sigmaMatrix = [];
+
+    for (let i = 0; i < matrixSize; i++) {
+        sigmaMatrix[i] = [];
+
+        for (let j = 0; j < matrixSize; j++) {
+            sigmaMatrix[i][j] = 0;
+        }
+    }
+
+    for (let i = 0; i < matrix3d.length; i++) {
+        for (let j = 0; j < matrixSize; j++) {
+            for (let k = 0; k < matrixSize; k++) {
+                sigmaMatrix[j][k] += matrix3d[i][j][k];
+            }
+        }
+    }
+
+    console.log("THE PROGRAM HAS BEEN FINISHED: ", sigmaMatrix);
 }
 main();
