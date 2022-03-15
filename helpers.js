@@ -48,16 +48,21 @@ const canFinishProgramm = (matrix) => {
 
 const inputMatrixIndexesToFill = matrix => {
     let maxInputCount = matrix[0].length ** 2;
+    const result = [];
 
     for (let i = 0; i < maxInputCount; i++) {
         let input = prompt("Enter row and column: ").split(/\s/);
 
         if (input[0] === "") break;
 
+        result.push(input);
+
         if (+input[1] === 0) continue;
 
         matrix[+input[0] - 1][+input[1] - 1] = 1;
     }
+
+    return result;
 }
 
 const multipleTwoMatrixes = (mat1, mat2) => {
